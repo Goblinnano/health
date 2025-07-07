@@ -1,0 +1,240 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    background-color: #fff6f0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 2em;
+}
+
+.page {
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+.btn {
+    background: #f4978e;
+    color: white;
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+input,
+select,
+textarea {
+    padding: 0.5em;
+    margin: 0.5em 0;
+    width: 100%;
+    font-size: 1em;
+}
+
+.progress {
+    height: 10px;
+    background: #ffe5e0;
+    border-radius: 5px;
+    margin: 1em 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #f4978e;
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+img.shoe {
+    width: 80px;
+    margin: 1em;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+img.shoe:hover {
+    transform: scale(1.1);
+}
+
+img.selected {
+    border-color: #f4978e;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5em;
+}
+
+.btn {
+    padding: 0.7em 1.5em;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn {
+    background-color: #ccc;
+    color: #333;
+}
+
+.back-btn:hover {
+    background-color: #bbb;
+}
+
+.next-btn {
+    background-color: #f4978e;
+    color: white;
+}
+
+.next-btn:hover {
+    background-color: #e77b6f;
+}
+
+/* Style สำหรับ Input Fields */
+.input-field {
+    width: 90%;
+    padding: 1em;
+    margin: 0.5em 0;
+    border: 2px solid #f4978e;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Effect เมื่อมีการ focus (คลิก) */
+.input-field:focus {
+    border-color: #f4978e;
+    box-shadow: 0 0 10px rgba(244, 151, 142, 0.5);
+    outline: none;
+}
+
+/* ให้ select และ input มีขนาดเท่ากัน */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12"><path fill="rgba(0,0,0,0.5)" d="M3 4l3 3 3-3z"/></svg>');
+    background-position: right 0.7em center;
+    background-repeat: no-repeat;
+    background-size: 0.65em;
+    padding-right: 2em;
+}
+
+.choice-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.choice-btn:hover {
+    background-color: #dcdcdc;
+}
+
+.choice-btn.selected {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* แถบความคืบหน้า */
+.progress-bar {
+    position: fixed;
+    top: 10px;
+    left: 5%;
+    width: 90%;
+    height: 30px;
+    background-color: #ffe5e0;
+    /* พื้นหลังอ่อนเข้ากับธีม */
+    border-radius: 15px;
+    padding: 5px;
+    display: none;
+    z-index: 1000;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #f4978e;
+    /* สีหลักของธีม */
+    width: 0%;
+    border-radius: 15px;
+    transition: width 0.3s ease;
+}
+
+#progressText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* 📱 Responsive สำหรับมือถือ */
+@media screen and (max-width: 600px) {
+    .progress-bar {
+        top: 8px;
+        left: 5%;
+        width: 90%;
+        height: 24px;
+        padding: 4px;
+    }
+
+    #progressText {
+        font-size: 16px;
+    }
+}
+
+/* เรียงช้อยส์ */
+.question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* ระยะห่างระหว่างปุ่ม */
+    margin-top: 1em;
+}
+
+.choice-btn {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px 20px;
+    margin: 0;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+/* สีเมื่อเลือกช้อยส์ */
+.choice-btn.selected {
+    background-color: #4CAF50;
+    color: white;
+    border: 2px solid #388E3C;
+}
+
+
